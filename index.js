@@ -21,7 +21,8 @@ function drawCards(){
             child.innerHTML = `<img src='${data.cards[count].image}'/>`
             count++
             }
-            winner(data.cards)
+            document.getElementById('verdict').textContent = winner(data.cards)
+            document.getElementById('remaining-cards').textContent = ' ' + data.remaining
         })
 }
 
@@ -32,15 +33,12 @@ function winner(cardsArray){
     const card2 = valuesArray.indexOf(cardsArray[1].value)
 
     if(card1 > card2){
-        console.log('card 1 wins!')
+        return 'Computer wins!'
     }else if(card1 < card2){
-        console.log('card 2 wins!')
+        return 'You Win!'
     }else{
-        console.log("it's a draw!")
+        return "It's a War!!"
     }
-
-    
-
 }
 
 
