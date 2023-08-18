@@ -17,10 +17,8 @@ function drawCards(){
         .then(data => {
             const card1 = data.cards[0].image
             const card2 = data.cards[1].image
-            document.getElementById('cards-container').innerHTML = `
-            <img src ='${card1}'/>
-            <img src ='${card2}'/>
-            `
+            document.getElementById('card1').innerHTML = `<img src ='${card1}'/>`
+            document.getElementById('card2').innerHTML = `<img src ='${card2}'/>`
         })
 }
 
