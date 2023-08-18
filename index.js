@@ -15,7 +15,12 @@ function drawCards(){
     fetch(`https://www.deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            const card1 = data.cards[0].image
+            const card2 = data.cards[1].image
+            document.getElementById('cards-container').innerHTML = `
+            <img src ='${card1}'/>
+            <img src ='${card2}'/>
+            `
         })
 }
 

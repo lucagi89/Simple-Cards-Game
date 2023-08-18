@@ -10,4 +10,19 @@ body{
     height: 100vh;
     background-color: green;
     border: 3px solid rgb(255, 0, 0);
+    text-align: center;
+}
+
+header{
+    background-color: rgb(222, 222, 43);
+    height: 80px;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 80px;
+    margin-bottom: 40px;
+}
+
+button{
+    width:100px;
+    height:40px;
 }
