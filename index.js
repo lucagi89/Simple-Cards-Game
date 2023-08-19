@@ -8,6 +8,7 @@ function getDeck(){
         .then(res => res.json())
         .then(data => {
             deckId = data.deck_id
+            updateRemainingCards(data.remaining)
         })
 }
 
@@ -22,7 +23,7 @@ function drawCards(){
             count++
             }
             document.getElementById('verdict').textContent = winner(data.cards)
-            document.getElementById('remaining-cards').textContent = ' ' + data.remaining
+            updateRemainingCards(data.remaining)
         })
 }
 
@@ -38,6 +39,13 @@ function winner(cardsArray){
         return 'You Win!'
     }else{
         return "It's a War!!"
+    }
+}
+
+function updateRemainingCards(remaining){
+    document.getElementById('remaining-cards').textContent = ' ' + remaining
+    if(remaining === 0){
+        drawBtn.disabled = true;
     }
 }
 

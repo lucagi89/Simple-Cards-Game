@@ -39,8 +39,14 @@ button{
     height:40px;
     font-size: 18px;
     border-radius: 5px;
-    background: none;
+    background: green;
     color: rgb(222, 222, 43);
+    cursor: pointer;
+}
+
+button:disabled{
+    filter:opacity(50%);
+    cursor: not-allowed;
 }
 
 .cards-container{
