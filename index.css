@@ -76,7 +76,7 @@ img{
 
 #verdict{
     margin:30px;
-    font-size: 50px;
+    font-size: 10vw;
 }
 
 
@@ -114,6 +114,9 @@ img{
         grid-area: computer-score;
     }
 
+    #verdict{
+        font-size: 60px;
+    }
 
 
 }
