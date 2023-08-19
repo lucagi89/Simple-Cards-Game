@@ -1,6 +1,8 @@
 
 const newDeckBtn = document.getElementById('new-deck-btn')
 const drawBtn = document.getElementById('draw-btn')
+let computerScore = 0
+let yourScore = 0
 let deckId
 
 function getDeck(){
@@ -34,19 +36,37 @@ function winner(cardsArray){
     const card2 = valuesArray.indexOf(cardsArray[1].value)
 
     if(card1 > card2){
+        computerScore++
+        document.getElementById('computer-score').textContent = computerScore
         return 'Computer wins!'
     }else if(card1 < card2){
+        yourScore++
+        document.getElementById('your-score').textContent = yourScore
         return 'You Win!'
     }else{
         return "It's a War!!"
     }
 }
 
+document.getElementById('computer-score').textContent = computerScore
+document.getElementById('your-score').textContent = yourScore
+
 function updateRemainingCards(remaining){
     document.getElementById('remaining-cards').textContent = ' ' + remaining
     if(remaining === 0){
         drawBtn.disabled = true;
+        theWinner()
     }
+}
+
+function theWinner(){
+    if (computerScore > yourScore){
+        document.getElementById('verdict').textContent = 'Computer Wins the Game!'
+    }else{
+        document.getElementById('verdict').textContent = 'You Win the Game!'
+    }
+
+    setInterval(() => location.reload(), 3000)
 }
 
 

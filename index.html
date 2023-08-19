@@ -13,16 +13,20 @@
 <body>
     
     <header>Beat The Card</header>
-    <button id = 'new-deck-btn'>New Deck</button>
-    <p>Cards Remaining:<em id = 'remaining-cards'></em> </p>
+    <div class="page-top">
+        <button id = 'new-deck-btn'>New Deck</button>
+        <p>Cards Remaining:<em id = 'remaining-cards'></em> </p>
+    </div>
     <h2 id="verdict">War!</h2>
     <main>
+        <p>Computer Score: <em id="computer-score"></em></p>
         <div id = 'cards-container' class = 'cards-container'>
             <div class = 'card'></div>
             <div class = 'card'></div>
         </div>
-        <button id = 'draw-btn'>Draw</button>
+        <p>Your Score: <em id="your-score"></em></p>
     </main>
+    <button id = 'draw-btn'>Draw</button>
     <script src="index.js"></script>
 </body>
 </html>
